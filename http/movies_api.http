@@ -1,0 +1,47 @@
+@url_base = http://127.0.0.1:8000/
+
+# Home
+GET {{url_base}}
+
+###
+
+# Get Movies
+GET  {{url_base}}movies
+
+###
+
+# Get Movie
+GET {{url_base}}movies/2
+
+###
+
+# Get Category Movie
+GET {{url_base}}movies/?category=Action
+
+###
+POST {{url_base}}movies
+Content-Type: application/json
+{
+  "id": 2,
+  "title": "Star Wars",
+  "overview": "A space opera set “a long time ago in a galaxy far, far away,”  the film centres on Luke Skywalker (played by the then relatively unknown Mark Hamill), a young man who finds himself embroiled in an interplanetary war between an authoritarian empire and rebel forces.",
+  "year": 1977,
+  "rating": 8.9,
+  "category": "Action"
+}
+
+###
+PUT {{url_base}}movies
+{
+  "id": 2,
+  "title": "Star Wars",
+  "overview": "A space opera set “a long time ago in a galaxy far, far away,”  the film centres on Luke Skywalker (played by the then relatively unknown Mark Hamill), a young man who finds himself embroiled in an interplanetary war between an authoritarian empire and rebel forces.",
+  "year": 1977,
+  "rating": 8.9,
+  "category": "Action"
+}
+
+###
+DELETE {{url_base}}movies/1
+
+###
